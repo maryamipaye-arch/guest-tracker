@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Guest Tracker</title>
+<style>
+body {
+font-family: 'Arial', sans-serif;
+background: #f3f6f9;
+padding: 1.5rem;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+.container {
+background: white;
+border-radius: 12px;
+padding: 1.5rem;
+max-width: 400px;
+width: 100%;
+box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+h1 {
+text-align: center;
+color: #2d5be3;
+margin-bottom: 1rem;
+}
+label {
+display: block;
+margin-top: 1rem;
+font-weight: bold;
+}
+input, select, button {
+width: 100%;
+padding: 0.75rem;
+margin-top: 0.5rem;
+border-radius: 8px;
+border: 1px solid #ccc;
+font-size: 1rem;
+}
+button {
+background: #2d5be3;
+color: white;
+border: none;
+margin-top: 1.5rem;
+cursor: pointer;
+transition: background 0.3s ease;
+}
+button:hover {
+background: #2046b3;
+}
+.success {
+color: green;
+text-align: center;
+margin-top: 1rem;
+font-weight: bold;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Guest Tracker</h1>
+<form id="guestForm">
+<label>Guest Name</label>
+<input type="text" name="guest" required />
+
+<label>Disciple</label>
+<input type="text" name="disciple" required />
+
+<label>Event Type</label>
+<select name="event" id="event" required>
+<option value="">Select Event</option>
+<option value="Bible Talk">Bible Talk</option>
+<option value="Church">Church</option>
+<option value="Bible Study">Bible Study</option>
+</select>
+
+<label>Group (Bible Talk only)</label>
+<select name="group" id="group">
+<option value="">Select Group</option>
+<option value="The Well">The Well</option>
+<option value="STT">STT</option>
+<option value="True North">True North</option>
+<option value="DMC">DMC</option>
+</select>
+
+<button type="submit">Submit</button>
+<p id="status" class="success"></p>
+</form>
+</div>
+
+<script>
+const form = document.getElementById('guestForm');
+const scriptURL = "https://script.google.com/macros/s/AKfycbwZ-lhv1LH1Ft4PDKc6zNY8dPo-Rwgznj8JIMOS2neHD2xz3nDqrYnHv_heFz6qWPJKoQ/exec";
+
+form.addEventListener('submit', async (e) => {
+e.preventDefault();
+const data = Object.fromEntries(new FormData(form).entries());
+data.date = new Date().toISOString().split('T')[0];
+
+await fetch(scriptURL, {
+method: 'POST',
+mode: 'no-cors',
+body: JSON.stringify(data)
+});
+
+document.getElementById('status').textContent = 'Guest submitted successfully!';
+form.reset();
+});
+
+// Hide group dropdown unless event is Bible Talk
+const eventType = document.getElementById('eventType');
+const group = document.getElementById('group');
+eventType.addEventListener('change', () => {
+group.parentElement.style.display = (eventType.value === 'Bible Talk') ? 'block' : 'none';
+});
+group.parentElement.style.display = 'none';
+</script>
+</body>
+</html>
