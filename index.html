@@ -6,150 +6,163 @@
 <title>Guest Tracker</title>
 <style>
 body {
-font-family: 'Arial', sans-serif;
-background: #f3f6f9;
-padding: 1.5rem;
-display: flex;
-flex-direction: column;
-align-items: center;
+  font-family: 'Arial', sans-serif;
+  background: #f3f6f9;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .container {
-background: white;
-border-radius: 12px;
-padding: 1.5rem;
-max-width: 400px;
-width: 100%;
-box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 h1 {
-text-align: center;
-color: #2d5be3;
-margin-bottom: 1rem;
+  text-align: center;
+  color: #2d5be3;
+  margin-bottom: 1rem;
 }
 label {
-display: block;
-margin-top: 1rem;
-font-weight: bold;
+  display: block;
+  margin-top: 1rem;
+  font-weight: bold;
 }
 input, select, button {
-width: 100%;
-padding: 0.75rem;
-margin-top: 0.5rem;
-border-radius: 8px;
-border: 1px solid #ccc;
-font-size: 1rem;
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
 }
 button {
-background: #2d5be3;
-color: white;
-border: none;
-margin-top: 1.5rem;
-cursor: pointer;
-transition: background 0.3s ease;
+  background: #2d5be3;
+  color: white;
+  border: none;
+  margin-top: 1.5rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
 }
 button:hover {
-background: #2046b3;
+  background: #2046b3;
 }
 .success {
-color: green;
-text-align: center;
-margin-top: 1rem;
-font-weight: bold;
+  color: green;
+  text-align: center;
+  margin-top: 1rem;
+  font-weight: bold;
 }
 </style>
 </head>
 <body>
 <div class="container">
-<h1>Guest Tracker</h1>
-<form id="guestForm">
-<label>Guest Name</label>
-<input type="text" name="guest" required />
+  <h1>Guest Tracker</h1>
+  <form id="guestForm">
 
-<label>Disciple</label>
-<select name="Disciple" id="Disciple" required>
-<option value="">Select Disciple</option>
-<option value="Arale">Arale</option>
-<option value="Ayo">Ayo</option>
-<option value="Bemi">Bemi</option>
-<option value="Connie">Connie</option>
-<option value="David">David</option>
-<option value="Derek">Derek</option>
-<option value="Grasi">Grasi</option>
-<option value="Gugu">Gugu</option>
-<option value="Gwen">Gwen</option>
-<option value="Jacob">Jacob</option>
-<option value="Joshua">Joshua</option>
-<option value="Kelvin">Kelvin</option>
-<option value="Klervi">Klervi</option>
-<option value="Kolbe">Kolbe</option>
-<option value="Kris">Kris</option>
-<option value="Lolade">Lolade</option>
-<option value="Nathan">Nathan</option>
-<option value="Nikki">Nikki</option>
-<option value="Rebecca">Rebecca</option>
-<option value="Reuben">Reuben</option>
-<option value="Serg">Serg</option>
-<option value="Shamika">Shamika</option>
-<option value="Shamilla">Shamilla</option>
-<option value="Stella">Stella</option>
-<option value="Temi">Temi</option>
-<option value="Tifney">Tifney</option>
-<option value="Victoria">Victoria</option>
-</select>
+    <label>Guest Name</label>
+    <input type="text" name="guest" required />
 
-<label>Event Type</label>
-<select name="event" id="event" required>
-<option value="">Select Event</option>
-<option value="Bible Talk">Bible Talk</option>
-<option value="Church">Church</option>
-<option value="Bible Study">Bible Study</option>
-</select>
-  
-<label>Date of Event</label>
-<input type="date" name="date" id="date" required />
+    <label>Disciple</label>
+    <select name="Disciple" id="Disciple" required>
+      <option value="">Select Disciple</option>
+      <option value="Arale">Arale</option>
+      <option value="Ayo">Ayo</option>
+      <option value="Bemi">Bemi</option>
+      <option value="Connie">Connie</option>
+      <option value="David">David</option>
+      <option value="Derek">Derek</option>
+      <option value="Grasi">Grasi</option>
+      <option value="Gugu">Gugu</option>
+      <option value="Gwen">Gwen</option>
+      <option value="Jacob">Jacob</option>
+      <option value="Joshua">Joshua</option>
+      <option value="Kelvin">Kelvin</option>
+      <option value="Klervi">Klervi</option>
+      <option value="Kolbe">Kolbe</option>
+      <option value="Kris">Kris</option>
+      <option value="Lolade">Lolade</option>
+      <option value="Nathan">Nathan</option>
+      <option value="Nikki">Nikki</option>
+      <option value="Rebecca">Rebecca</option>
+      <option value="Reuben">Reuben</option>
+      <option value="Serg">Serg</option>
+      <option value="Shamika">Shamika</option>
+      <option value="Shamilla">Shamilla</option>
+      <option value="Stella">Stella</option>
+      <option value="Temi">Temi</option>
+      <option value="Tifney">Tifney</option>
+      <option value="Victoria">Victoria</option>
+    </select>
 
-<label>Bible Talk</label>
-<select name="BT" id="BT">
-<option value=/option>
-<option value="The Well">The Well</option>
-<option value="STT">STT</option>
-<option value="True North">True North</option>
-<option value="DMC">DMC</option>
-</select>
+    <label>Event Type</label>
+    <select name="event" id="event" required>
+      <option value="">Select Event</option>
+      <option value="Bible Talk">Bible Talk</option>
+      <option value="Church">Church</option>
+      <option value="Bible Study">Bible Study</option>
+    </select>
+    
+    <label>Date of Event</label>
+    <input type="date" name="date" id="date" required />
 
-<button type="submit">Submit</button>
-<p id="status" class="success"></p>
-</form>
+    <label>Bible Talk</label>
+    <select name="BT" id="BT">
+      <option value="">Select Bible Talk</option>
+      <option value="The Well">The Well</option>
+      <option value="STT">STT</option>
+      <option value="True North">True North</option>
+      <option value="DMC">DMC</option>
+    </select>
+
+    <button type="submit">Submit</button>
+    <p id="status" class="success"></p>
+  </form>
 </div>
 
 <script>
 const form = document.getElementById('guestForm');
 const scriptURL = "https://script.google.com/macros/s/AKfycbwZ-lhv1LH1Ft4PDKc6zNY8dPo-Rwgznj8JIMOS2neHD2xz3nDqrYnHv_heFz6qWPJKoQ/exec";
 
+// Set default date to today
+document.getElementById('date').value = new Date().toISOString().split('T')[0];
+
 form.addEventListener('submit', async (e) => {
-e.preventDefault();
-const data = Object.fromEntries(new FormData(form).entries());
-data.date = new Date().toISOString().split('T')[0];
+  e.preventDefault();
+  const data = Object.fromEntries(new FormData(form).entries());
 
-await fetch(scriptURL, {
-method: 'POST',
-mode: 'no-cors',
-body: JSON.stringify(data)
+  await fetch(scriptURL, {
+    method: 'POST',
+    mode: 'no-cors',
+    body: JSON.stringify(data)
+  });
+
+  document.getElementById('status').textContent = 'Guest submitted successfully!';
+  form.reset();
+  // reset date to today again
+  document.getElementById('date').value = new Date().toISOString().split('T')[0];
+  toggleBT();
 });
 
-document.getElementById('status').textContent = 'Guest submitted successfully!';
-form.reset();
-});
+// Show Bible Talk dropdown only when "Bible Talk" is selected
+const eventSelect = document.getElementById('event');
+const btSelect = document.getElementById('BT');
 
-// Hide group dropdown unless event is Bible Talk
-const eventType = document.getElementById('eventType');
-const group = document.getElementById('group');
-eventType.addEventListener('change', () => {
-group.parentElement.style.display = (eventType.value === 'Bible Talk') ? 'block' : 'none';
-});
-group.parentElement.style.display = 'none';
+const toggleBT = () => {
+  if (eventSelect.value === 'Bible Talk') {
+    btSelect.parentElement.style.display = 'block';
+  } else {
+    btSelect.parentElement.style.display = 'none';
+    btSelect.value = '';
+  }
+};
+
+// Initial state
+toggleBT();
+eventSelect.addEventListener('change', toggleBT);
 </script>
 </body>
 </html>
-
-
